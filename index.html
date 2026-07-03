@@ -45,9 +45,13 @@
     padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 
+  footer{
+    flex-shrink:0;
+  }
+
   .card{
     background:var(--white);
-    border-radius:24px 24px 0 0;
+    border-radius:0;
     box-shadow:0 20px 50px rgba(26,79,160,0.14);
     overflow:hidden;
     display:flex;
@@ -56,21 +60,24 @@
   }
   .card-header{
     background:linear-gradient(135deg,var(--blue),var(--blue-light));
-    padding:14px 16px;
+    padding:12px 16px;
     color:#fff;
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:14px;
     flex-shrink:0;
+    border-radius:0;
+    min-height:80px;
+    justify-content:flex-start;
   }
   .card-header .icon{
-    flex-shrink:0;width:auto;height:48px;
+    flex-shrink:0;width:auto;height:auto;
     background:transparent;
     display:flex;align-items:center;justify-content:center;
   }
-  .card-header .icon img{ height:42px; width:auto; }
-  .card-header .title{ font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;line-height:1.15;margin:0; }
-  .card-header .subtitle{ font-size:.7rem;color:rgba(255,255,255,.85);margin-top:1px;margin-bottom:0; }
+  .card-header .icon img{ height:60px; width:auto; }
+  .card-header .title{ font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;line-height:1.15;margin:0;text-align:center; }
+  .card-header .subtitle{ font-size:.7rem;color:rgba(255,255,255,.85);margin-top:1px;margin-bottom:0;text-align:center; }
 
   .card-body{ 
     padding:16px;
@@ -110,38 +117,41 @@
   }
 
   .input-row{
-    display:flex;align-items:center;gap:6px;
+    display:flex;align-items:center;justify-content:center;gap:6px;
     border:1.5px solid var(--gray);border-radius:10px;padding:8px 12px;
   }
-  .input-row span.prefix{ font-weight:700;color:var(--text);font-size:.9rem; }
-  .input-row span.suffix{ color:var(--text-muted);font-size:.8rem; }
+  .input-row span.prefix{ font-weight:700;color:var(--text);font-size:.9rem;line-height:1; }
+  .input-row span.suffix{ color:var(--text-muted);font-size:.8rem;line-height:1; }
   .input-row input{
     flex:1;border:none;outline:none;font-size:.95rem;color:var(--text);
-    background:transparent;min-width:0;font-family:'Nunito',sans-serif;font-weight:600;
+    background:transparent;min-width:0;font-family:'Nunito',sans-serif;font-weight:600;text-align:center;line-height:1;
   }
 
   .divider{ height:1px;background:var(--gray);margin:4px 0; }
 
-  .result-title{ font-size:.65rem;font-weight:800;letter-spacing:1.2px;color:var(--text-muted);margin-bottom:8px; }
+  .result-title{ font-size:.65rem;font-weight:800;letter-spacing:1.2px;color:var(--text-muted);margin-bottom:8px;text-align:center; }
   .result-grid{ display:flex;flex-direction:column;gap:8px; }
-  .result-box{ background:var(--blue-pale);border-radius:12px;padding:12px;text-align:center; }
+  .result-box{ background:var(--blue-pale);border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center; }
   .result-box .label{
     display:flex;align-items:center;justify-content:center;gap:4px;
-    color:var(--blue);font-weight:700;font-size:.75rem;margin-bottom:2px;
+    color:var(--blue);font-weight:700;font-size:.75rem;margin-bottom:2px;line-height:1;
   }
-  .result-box .value{ font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;color:var(--text); }
-  .result-box .unit{ color:var(--text-muted);font-size:.75rem; }
+  .result-box .value{ font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;color:var(--text);line-height:1; }
+  .result-box .unit{ color:var(--text-muted);font-size:.75rem;line-height:1; }
 
   .concentration-box{
     background:var(--off-white);border-radius:12px;padding:12px;
-    display:flex;align-items:center;gap:10px;
+    display:flex;align-items:center;gap:10px;justify-content:center;
   }
   .concentration-box .circle{
     flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-pale);
     display:flex;align-items:center;justify-content:center;
   }
-  .concentration-box .label{ font-size:.65rem;font-weight:800;letter-spacing:1px;color:var(--text-muted); }
-  .concentration-box .value{ font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text); }
+  .concentration-box > div{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .concentration-box .label{ font-size:.65rem;font-weight:800;letter-spacing:1px;color:var(--text-muted);line-height:1; }
+  .concentration-box .value{ font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);line-height:1; }
 
   .empty-state{ text-align:center;color:var(--text-muted);font-size:.8rem;padding-top:2px; }
 </style>
@@ -154,7 +164,7 @@
       <div class="icon">
         <img src="images/logo-emblema.png" alt="AB Chemicals">
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1;text-align:center;">
         <div class="title">Calculadora de Diluição</div>
         <div class="subtitle">Proporção correta para seus produtos</div>
       </div>
@@ -223,6 +233,10 @@
     </div>
   </div>
 
+  <footer style="text-align:center;padding:12px;font-size:.8rem;color:var(--text-muted);margin-top:auto;">
+    <a href="https://www.abchemicals.com.br" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:bold;">AB Chemicals - Soluções em Limpeza Profissional</a><br>
+    (43) 98871-2001
+  </footer>
 </div>
 
 <script>
