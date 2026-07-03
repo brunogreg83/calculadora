@@ -83,19 +83,19 @@
     padding:16px;
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:12px;
     overflow-y:auto;
     flex:1;
   }
 
   .field-label{
     display:flex;align-items:center;gap:6px;
-    font-weight:700;color:var(--text);margin-bottom:8px;font-size:.85rem;
+    font-weight:700;color:var(--text);margin-bottom:6px;font-size:1rem;
   }
 
-  .presets{ display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px; }
+  .presets{ display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:6px; }
   .presets button{
-    padding:8px 0;border-radius:8px;font-size:.75rem;font-weight:700;
+    padding:10px 0;border-radius:8px;font-size:.85rem;font-weight:700;
     border:none;cursor:pointer;transition:background .15s,color .15s;
     background:var(--off-white);color:var(--text-muted);
     font-family:'Nunito',sans-serif;
@@ -118,42 +118,42 @@
 
   .input-row{
     display:flex;align-items:center;justify-content:center;gap:6px;
-    border:1.5px solid var(--gray);border-radius:10px;padding:8px 12px;
+    border:1.5px solid var(--gray);border-radius:10px;padding:10px 12px;
   }
-  .input-row span.prefix{ font-weight:700;color:var(--text);font-size:.9rem;line-height:1; }
-  .input-row span.suffix{ color:var(--text-muted);font-size:.8rem;line-height:1; }
+  .input-row span.prefix{ font-weight:700;color:var(--text);font-size:1rem;line-height:1; }
+  .input-row span.suffix{ color:var(--text-muted);font-size:.85rem;line-height:1; }
   .input-row input{
-    flex:1;border:none;outline:none;font-size:.95rem;color:var(--text);
+    flex:1;border:none;outline:none;font-size:1.05rem;color:var(--text);
     background:transparent;min-width:0;font-family:'Nunito',sans-serif;font-weight:600;text-align:center;line-height:1;
   }
 
-  .divider{ height:1px;background:var(--gray);margin:4px 0; }
+  .divider{ height:1px;background:var(--gray);margin:2px 0; }
 
-  .result-title{ font-size:.65rem;font-weight:800;letter-spacing:1.2px;color:var(--text-muted);margin-bottom:8px;text-align:center; }
-  .result-grid{ display:flex;flex-direction:column;gap:8px; }
-  .result-box{ background:var(--blue-pale);border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center; }
+  .result-title{ font-size:.7rem;font-weight:800;letter-spacing:1.2px;color:var(--text-muted);margin-bottom:6px;text-align:center; }
+  .result-grid{ display:flex;flex-direction:column;gap:10px; }
+  .result-box{ background:var(--blue-pale);border-radius:12px;padding:16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center; }
   .result-box .label{
     display:flex;align-items:center;justify-content:center;gap:4px;
-    color:var(--blue);font-weight:700;font-size:.75rem;margin-bottom:2px;line-height:1;
+    color:var(--blue);font-weight:700;font-size:.75rem;margin-bottom:4px;line-height:1;
   }
-  .result-box .value{ font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;color:var(--text);line-height:1; }
+  .result-box .value{ font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:var(--text);line-height:1; }
   .result-box .unit{ color:var(--text-muted);font-size:.75rem;line-height:1; }
 
   .concentration-box{
-    background:var(--off-white);border-radius:12px;padding:12px;
+    background:var(--off-white);border-radius:12px;padding:16px;
     display:flex;align-items:center;gap:10px;justify-content:center;
   }
   .concentration-box .circle{
-    flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-pale);
+    flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--blue-pale);
     display:flex;align-items:center;justify-content:center;
   }
   .concentration-box > div{
     display:flex;flex-direction:column;align-items:center;justify-content:center;
   }
-  .concentration-box .label{ font-size:.65rem;font-weight:800;letter-spacing:1px;color:var(--text-muted);line-height:1; }
-  .concentration-box .value{ font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);line-height:1; }
+  .concentration-box .label{ font-size:.7rem;font-weight:800;letter-spacing:1px;color:var(--text-muted);line-height:1; }
+  .concentration-box .value{ font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);line-height:1; }
 
-  .empty-state{ text-align:center;color:var(--text-muted);font-size:.8rem;padding-top:2px; }
+  .empty-state{ text-align:center;color:var(--text-muted);font-size:.85rem;padding-top:2px; }
 </style>
 </head>
 <body>
@@ -233,7 +233,7 @@
     </div>
   </div>
 
-  <footer style="text-align:center;padding:12px;font-size:.8rem;color:var(--text-muted);margin-top:auto;">
+  <footer style="text-align:center;padding:16px;font-size:.85rem;color:var(--text-muted);">
     <a href="https://www.abchemicals.com.br" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:bold;">AB Chemicals - Soluções em Limpeza Profissional</a><br>
     (43) 98871-2001
   </footer>
